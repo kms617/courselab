@@ -1,0 +1,8 @@
+<h1>Courses</h1>
+  <% @courses.each do |course| %>
+    <%= link_to course.title, course_path(course) %>
+    <%= image_tag(course.image) %>
+    <%= link_to course.url, course.url %>
+    <%= course.source %>
+    <%= course.description %><br>
+  <% end %>

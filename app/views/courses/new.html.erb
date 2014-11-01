@@ -1,0 +1,9 @@
+<h1>Submit a Course</h1>
+<%= simple_form_for @course do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :image, type: :file %>
+  <%= f.input :url %>
+  <%= f.input :source %>
+  <%= f.button :submit %>
+<% end %>
