@@ -24,6 +24,10 @@ class CoursesController < ApplicationController
     end
   end
 
+  def search
+    @courses = Course.search(params[:search])
+  end
+
   private
 
   def course_params
