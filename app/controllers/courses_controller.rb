@@ -1,10 +1,11 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = Course.order(title: :desc)
+    @courses = Course.search(params[:search]).order(title: :desc)
   end
 
   def show
+    binding.pry
     @course = Course.find(params[:id])
   end
 
@@ -22,6 +23,11 @@ class CoursesController < ApplicationController
       flash[:alert] = "There was a problem, please try again."
       render :new
     end
+  end
+
+  def search
+  binding.pry
+    @courses = Course.search(params[:search])
   end
 
   private

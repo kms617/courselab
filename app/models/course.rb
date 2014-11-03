@@ -7,4 +7,11 @@ class Course < ActiveRecord::Base
   validates :url, presence: true, format: { with: URI.regexp },
     if: Proc.new { |a| a.url.present? }
 
+  def self.search(search)
+    if search
+      where(['title ILIKE ? OR description ILIKE ? OR source ILIKE ?', search, search, search])
+    else
+      all
+    end
+  end
 end
