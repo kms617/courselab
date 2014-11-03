@@ -8,7 +8,10 @@ class Course < ActiveRecord::Base
     if: Proc.new { |a| a.url.present? }
 
   def self.search(search)
-    search_condition = "%" + search + "%"
-    find(:all, :conditions => ['title LIKE ? OR description LIKE ? OR source LIKE ?', search_condition, search_condition])
+    if search
+      where(['title ILIKE ? OR description ILIKE ? OR source ILIKE ?', search, search, search])
+    else
+      all
+    end
   end
 end
