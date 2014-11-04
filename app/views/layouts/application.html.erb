@@ -11,34 +11,44 @@
     <%= csrf_meta_tags %>
   </head>
 
-<div class="row">
-  <div class="logo">
-    <%= link_to image_tag("/matlab.jpg"), root_path %>
-  </div>
-  <div class="search">
-    <%= form_tag courses_path, method: 'get' do %>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag "Search", name: nil %>
-    <% end %>
-  </div>
-  <div class="nav"
-    <ul class="siteLinks"
-        <li><%= link_to 'Course Index', courses_path %></li>
-        <li><%= link_to 'New Course', new_course_path %></li>
+  <nav class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="/">CourseLab</a></h1>
+      </li>
     </ul>
+    <section class="top-bar-section">
+      <ul class="left">
+        <li><%= link_to "Course Index", courses_path %></li>
+        <li><%= link_to "Submit a New Course", new_course_path %></li>
+        </ul>
+        <ul class="right">
+          <li class="has-form">
+            <form>
+              <div class="row collapse">
+                <div class="small-8 columns">
+                  <%= form_tag courses_path, method: 'get' do %>
+                  <%= text_field_tag :search, params[:search] %>
+                </div>
+                <div class="small-4 columns">
+                  <%= submit_tag "Search", name: nil %>
+                  <% end %>
+                </div>
+              </div>
+            </form>
+          </li>
+        </ul>
+    </section>
+  </nav>
+
+  <div class="container">
+    <% if !notice.nil? %><p class="alert-box radius success"><%= notice %></p><% end %>
+    <% if !alert.nil? %><p class="alert-box radius warning"><%= alert %></p><% end %>
   </div>
-</div>
-
-
-<div class="container">
-  <% if !notice.nil? %><p class="alert-box radius success"><%= notice %></p><% end %>
-  <% if !alert.nil? %><p class="alert-box radius warning"><%= alert %></p><% end %>
-</div>
-
 
   <body>
-
     <%= yield %>
     <%= javascript_include_tag "application" %>
   </body>
+
 </html>

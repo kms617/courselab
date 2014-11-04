@@ -5,6 +5,11 @@ class CourseImageUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def default_url
+    'default.png'
+  end
+
+
   process :resize_to_fill => [300, 300]
 
 end

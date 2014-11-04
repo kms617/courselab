@@ -17,11 +17,11 @@ ActiveRecord::Schema.define(version: 20141031205502) do
   enable_extension "plpgsql"
 
   create_table "courses", force: true do |t|
-    t.string   "title",                                     null: false
-    t.string   "image",       default: "public/matlab.jpg"
-    t.string   "url",                                       null: false
-    t.string   "source",                                    null: false
-    t.text     "description",                               null: false
+    t.string   "title",       null: false
+    t.string   "image"
+    t.string   "url",         null: false
+    t.string   "source",      null: false
+    t.text     "description", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
