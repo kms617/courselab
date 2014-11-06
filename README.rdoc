@@ -2,6 +2,8 @@
 
 This is a project for a simple library of online course material. Users can view a collection of courses and add to that collection. The project was built using Ruby 2.1.2 with postgresql for the database.
 
+The CSS used for the card layout is modified from that of Dudley Storey at demosthenes.info, you can view it on Code Pen at: http://codepen.io/dudleystorey/pen/yqrhw
+
 ----
 
 User Stories
@@ -16,4 +18,9 @@ As a User, I can search the title, source and description of all the courses on 
 
 ----
 
-The CSS used for the card layout is modified from that of Dudley Storey at demosthenes.info, you can view it on Code Pen at: http://codepen.io/dudleystorey/pen/yqrhw
+To Do (time permitting):
+- add edit and delete options to the courses
+- add an option to enter and image url
+- create more unique css styling
+
+---
