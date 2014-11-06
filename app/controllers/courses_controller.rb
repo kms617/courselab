@@ -1,7 +1,7 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = Course.search(params[:search]).order(title: :asc)
+    @courses = Course.search(params[:search]).order(:title)
   end
 
   def show

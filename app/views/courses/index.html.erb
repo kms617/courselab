@@ -3,7 +3,7 @@
   <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
   <% @courses.each do |course|%>
   <li> <figure>
-  <%= link_to image_tag(course.image.card), course_path(course) %>
+  <%= link_to image_tag(course.image), course_path(course) %>
   <figcaption><strong><%= link_to course.title, course_path(course) %></strong><br><%= course.source %><br><%= course.description %></figcaption>
    </figure></li>
   <% end %>
