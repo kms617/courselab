@@ -11,43 +11,47 @@
     <%= csrf_meta_tags %>
   </head>
 
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">CourseLab</a></h1>
-      </li>
-    </ul>
-    <section class="top-bar-section">
-      <ul class="left">
-        <li><%= link_to "Course Index", courses_path %></li>
-        <li><%= link_to "Submit a New Course", new_course_path %></li>
-        </ul>
-        <ul class="right">
-          <li class="has-form">
-            <form>
-              <div class="row collapse">
-                <div class="small-8 columns">
-                  <%= form_tag courses_path, method: 'get' do %>
-                  <%= text_field_tag :search, params[:search] %>
+<body>
+  <div class="contain-to-grid">
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="/">CourseLab</a></h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul class="left">
+          <li><%= link_to "Course Index", courses_path %></li>
+          <li><%= link_to "Submit a New Course", new_course_path %></li>
+          </ul>
+          <ul class="right">
+            <li class="has-form">
+              <form>
+                <div class="row collapse">
+                  <div class="small-8 columns">
+                    <%= form_tag courses_path, method: 'get' do %>
+                    <%= text_field_tag :search, params[:search], placeholder: 'Search Courses' %>
+                  </div>
+                  <div class="small-4 columns">
+                    <%= submit_tag "Search", name: nil, class: 'button radius' %>
+                    <% end %>
+                  </div>
                 </div>
-                <div class="small-4 columns">
-                  <%= submit_tag "Search", name: nil %>
-                  <% end %>
-                </div>
-              </div>
-            </form>
-          </li>
-        </ul>
-    </section>
-  </nav>
+              </form>
+            </li>
+          </ul>
+      </section>
+    </nav>
+  </div>
 
   <div class="container">
     <% if !notice.nil? %><p class="alert-box radius success"><%= notice %></p><% end %>
     <% if !alert.nil? %><p class="alert-box radius warning"><%= alert %></p><% end %>
   </div>
 
-  <body>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 

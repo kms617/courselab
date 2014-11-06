@@ -1,8 +1,11 @@
-<h1>Online MATLab Courses</h1>
-  <% @courses.each do |course| %>
-    <%= link_to course.title, course_path(course) %>
-    <%= image_tag(course.image) %>
-    <%= link_to course.url, course.url %>
-    <%= course.source %>
-    <%= course.description %><br>
+<div id="columns">
+  <h2>Online guide to MATLab and Simulink Courses</h2>
+  <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+  <% @courses.each do |course|%>
+  <li> <figure>
+  <%= link_to image_tag(course.image.card), course_path(course) %>
+  <figcaption><strong><%= link_to course.title, course_path(course) %></strong><br><%= course.source %><br><%= course.description %></figcaption>
+   </figure></li>
   <% end %>
+</ul>
+</div>

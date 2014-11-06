@@ -26,3 +26,5 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+The CSS used for the card layout is modified from that of Dudley Storey at demosthenes.info, you can view it on Code Pen at: http://codepen.io/dudleystorey/pen/yqrhw

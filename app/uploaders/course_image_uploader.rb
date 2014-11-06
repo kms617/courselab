@@ -9,7 +9,11 @@ class CourseImageUploader < CarrierWave::Uploader::Base
     'default.png'
   end
 
+  process :resize_to_fit => [300, 300]
 
-  process :resize_to_fill => [300, 300]
+  version :card do
+    process :resize_to_fit => [200, 135]
+  end
+
 
 end
