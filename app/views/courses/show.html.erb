@@ -1,5 +1,7 @@
-<h1><%= @course.title %></h1>
-<%= image_tag(@course.image) %>
-<%= link_to @course.url, @course.url %>
-<%= @course.source %>
-<%= @course.description %>
+<div class="row">
+  <h2><%= @course.title %></h2>
+  <%= image_tag(@course.image) %><br>
+  <strong>Course Url: </strong><%= link_to @course.url, @course.url %><br>
+  <strong>Course Source: </strong><%= @course.source %><br>
+  <strong>Description: </strong><%= @course.description %><br>
+</div>

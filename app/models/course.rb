@@ -9,7 +9,8 @@ class Course < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where(['title ILIKE ? OR description ILIKE ? OR source ILIKE ?', search, search, search])
+      search_term = "%" + search + "%"
+      where(['title ILIKE ? OR description ILIKE ? OR source ILIKE ?', search_term, search_term, search_term])
     else
       all
     end

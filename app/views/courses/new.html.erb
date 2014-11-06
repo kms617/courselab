@@ -1,9 +1,11 @@
-<h1>Submit a Course</h1>
-<%= simple_form_for @course do |f| %>
-  <%= f.input :title %>
-  <%= f.input :description %>
-  <%= f.input :image, type: :file %>
-  <%= f.input :url %>
-  <%= f.input :source %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-wrapper">
+  <h1>Submit a Course</h1>
+  <%= simple_form_for @course do |f| %>
+    <%= f.input :title, placeholder: 'Course Title' %>
+    <%= f.input :url, placeholder: 'Course Location Online' %>
+    <%= f.input :source, placeholder: 'eg. MATLab Examples, XYZ University, EdX' %>
+    <%= f.input :description, placeholder: 'Course Description'  %>
+    <%= f.input :image, type: :file %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
