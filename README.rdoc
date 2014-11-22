@@ -18,9 +18,28 @@ As a User, I can search the title, source and description of all the courses on 
 
 ----
 
+ER Diagram
+```
+ +-------------------------+ 
+ |  Courses                | 
+ +-------------------------+ 
+ |  name, :string, NF      | 
+ |  url, :string, NF       | 
+ |  source, :string, NF    | 
+ |  description, :text, NF | 
+ |  image, :text, default  | 
+ |                         | 
+ |  time stamps            | 
+ |                         | 
+ |  index_name             | 
+ |  index_url              | 
+ +-------------------------+ 
+```
+---
+
 To Do (time permitting):
 - add edit and delete options to the courses
-- add an option to enter and image url
+- add an option to enter an image url
 - create more unique css styling
 - make design responsive
 ---
