@@ -37,13 +37,9 @@ ER Diagram
 
 ```
 ---
-```
-
-# To Do (time permitting):
-* add edit and delete options to the courses
-* add an option to enter an image url
-* create more unique css styling
-* make design responsive
-
-```
+To Do (time permitting):
+- add edit and delete options to the courses
+- add an option to enter an image url
+- create more unique css styling
+- make design responsive
 ---
