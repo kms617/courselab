@@ -1,7 +1,11 @@
 class CoursesController < ApplicationController
 
   def index
-    @courses = Course.search(params[:search]).order(:title)
+    if params[:search]
+      @courses = Course.search(params[:search]).order(:title)
+    else
+      @courses = Course.order(:title)
+    end
   end
 
   def show

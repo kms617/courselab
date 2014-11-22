@@ -1,9 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'unicorn'
-gem 'kaminari'
 gem 'pg_search'
-gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'rails', '4.1.6'
@@ -30,6 +27,3 @@ group :development, :test do
   gem "shoulda-matchers"
   gem "valid_attribute"
 end
-
-gem 'devise'
-gem 'simple_form'
